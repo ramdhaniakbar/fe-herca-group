@@ -15,6 +15,11 @@ export default function Navigation() {
               Transactions
             </a>
           </li>
+          <li>
+            <a href="/payments" className="hover:bg-gray-900 px-4 py-2 rounded">
+              Payments
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

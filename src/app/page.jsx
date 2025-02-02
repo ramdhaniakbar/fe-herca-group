@@ -9,7 +9,6 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import axios from "axios"
-import moment from "moment"
 import React, { useEffect, useState } from "react"
 import Loading from "./components/Loading"
 
@@ -27,7 +26,7 @@ const Home = () => {
         setLoading(false)
       })
       .catch((error) => {
-        console.error("Error fetching transactions:", error)
+        console.error("Error fetching calculation transactions:", error)
         setLoading(false)
       })
   }, [])
@@ -48,8 +47,8 @@ const Home = () => {
             <TableHead className="w-[50px] text-center">No</TableHead>
             <TableHead>Marketing</TableHead>
             <TableHead>Bulan</TableHead>
-            <TableHead className="text-right">Omzet</TableHead>
-            <TableHead className="text-right">Komisi</TableHead>
+            <TableHead className="text-center">Omzet</TableHead>
+            <TableHead className="text-center">Komisi</TableHead>
             <TableHead className="text-right">Komisi Nominal</TableHead>
           </TableRow>
         </TableHeader>
@@ -59,8 +58,8 @@ const Home = () => {
               <TableCell className="text-center">{index + 1}</TableCell>
               <TableCell>{transaction.marketing_name}</TableCell>
               <TableCell>{transaction.month}</TableCell>
-              <TableCell className="text-right">Rp {parseInt(transaction.omzet).toLocaleString()}</TableCell>
-              <TableCell className="text-right">{transaction.commission * 100}%</TableCell>
+              <TableCell className="text-center">Rp {parseInt(transaction.omzet).toLocaleString()}</TableCell>
+              <TableCell className="text-center">{transaction.commission * 100}%</TableCell>
               <TableCell className="text-right">Rp {parseInt(transaction.commission_nominal).toLocaleString()}</TableCell>
             </TableRow>
           ))}
