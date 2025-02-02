@@ -204,6 +204,7 @@ const Transaction = () => {
                       <Button
                         variant="outline"
                         onClick={() => handleDialogOpen(transaction.id)}
+                        disabled={transaction.status === 'paid'}
                       >
                         <Plus /> Payment
                       </Button>
