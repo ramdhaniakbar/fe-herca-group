@@ -53,7 +53,7 @@ const Payments = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {payments?.data.map((payment, index) => (
+          {payments?.map((payment, index) => (
             <TableRow
               key={payment.id}
               className="even:bg-gray-50 hover:bg-gray-100 transition"

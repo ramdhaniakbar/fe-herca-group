@@ -92,8 +92,6 @@ const Transaction = () => {
           if (!apiErrors && error?.response?.data?.message) {
             return error?.response?.data?.message || "An error occurred";
           }
-
-          return "An unknown error occurred";
         },
       }
     )
@@ -157,7 +155,7 @@ const Transaction = () => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {transactions?.data.map((transaction, index) => (
+              {transactions?.map((transaction, index) => (
                 <TableRow
                   key={transaction.id}
                   className="even:bg-gray-50 hover:bg-gray-100 transition"

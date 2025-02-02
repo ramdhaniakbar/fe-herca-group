@@ -51,7 +51,7 @@ const Home = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {calculationTransactions?.data.map((transaction, index) => (
+          {calculationTransactions?.map((transaction, index) => (
             <TableRow key={index + 1} className="even:bg-gray-50 hover:bg-gray-100 transition">
               <TableCell className="text-center">{index + 1}</TableCell>
               <TableCell className="font-semibold">{transaction.marketing_name}</TableCell>
