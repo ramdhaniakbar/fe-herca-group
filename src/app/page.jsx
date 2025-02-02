@@ -31,8 +31,6 @@ const Home = () => {
       })
   }, [])
 
-  console.log("transactions ", calculationTransactions)
-
   if (loading) return <Loading />
 
   return (
@@ -56,9 +54,9 @@ const Home = () => {
           {calculationTransactions?.data.map((transaction, index) => (
             <TableRow key={index + 1} className="even:bg-gray-50 hover:bg-gray-100 transition">
               <TableCell className="text-center">{index + 1}</TableCell>
-              <TableCell>{transaction.marketing_name}</TableCell>
+              <TableCell className="font-semibold">{transaction.marketing_name}</TableCell>
               <TableCell>{transaction.month}</TableCell>
-              <TableCell className="text-center">Rp {parseInt(transaction.omzet).toLocaleString()}</TableCell>
+              <TableCell className="text-center font-semibold">Rp {parseInt(transaction.omzet).toLocaleString()}</TableCell>
               <TableCell className="text-center">{transaction.commission * 100}%</TableCell>
               <TableCell className="text-right">Rp {parseInt(transaction.commission_nominal).toLocaleString()}</TableCell>
             </TableRow>
